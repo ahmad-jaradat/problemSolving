@@ -1,0 +1,80 @@
+public class Employee {
+
+    Employee instance = ;
+    private Employee(){
+
+    }
+
+    public getInstance() {
+    synchrozied {
+        if(instance == null){
+            instance = new Employee();
+        }
+        }
+        return instance;
+    }
+
+}
+
+
+
+/*
+2nd max integer in array
+Input: arr[] = {12, 35, 1, 10, 34, 1}
+Output: The second largest element is 34.
+Explanation: The largest element of the array is 35 and the second largest element is #34
+
+
+*/
+
+int max = arr[0];
+int secondMax = INTEGER.MIN_VALUE;
+    for(int i=1; i< arr.length; i++){
+        if(max < arr[i])
+            max = arr[i];
+    }
+
+    for(int i=0; i< arr.length; i++){
+        if(max == ary[i])
+            continue;
+        if(secondMax < arr[i])
+            secondMax = arr[i];
+    }
+
+    return secondMax;
+
+
+
+/*
+Write a program to check if a binary tree is BST (binary search tree) or not ?
+*/
+
+    int ary[]
+
+
+
+/*
+Sort an array arr = [1,2,4,6,6,0]
+all array elements between 0 and 9
+Output : arr = [0, 1,2,4,6,6]
+
+    map<int,int>          // 0 =3, 1=1, 2=1,4 =1, 6 =2
+    for(int i =0 ; i< arr.length ; i++){
+       if(map.get(arr[i]) == null)
+           map.set(arr[i], 1);
+           else{
+           map.set(arr[i], map.get(arr[i])++);
+           }
+    }
+    int index = 0;
+    for(int i=0;i<=9 ; i++){
+        if(map.get(i)!= null){
+            for(int x = 0; x <map.get(i); x++){
+                ary[index++] = i;
+            }
+        }
+
+    }
+
+
+*/

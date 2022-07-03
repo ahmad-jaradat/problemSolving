@@ -1,0 +1,60 @@
+public class demoCollab {
+
+private static final demoCollab dc= new deCollab ();
+private demoCollab(){
+
+}
+
+public demoCollabGetInstance(){
+return this.dc.getInstance();
+}
+
+
+
+}
+
+public runApp{
+
+
+
+}
+
+
+
+
+
+
+//////
+
+
+
+You have to write a program which will take number input from the user and return true for any new number and false for non-unique numbe?
+As example :
+1 -> true
+4 -> true
+4 -> false
+1 -> false
+5 -> true
+
+Set uniqueNumber = new HashSet<int>();
+public boolean addIntToSet(int input){
+return uniqueNumber.add(input);
+
+}
+
+
+///////
+
+2nd max integer in array
+Input: arr[] = {12, 35, 1, 10, 34, 1}
+Output: The second largest element is 34.
+Explanation: The largest element of the array is 35 and the second largest element is #34
+
+public void showSecondLargeNum(int [] arr){
+Arrays.sort(arr);
+if(arr.size() > 2)
+System.out.println(" Second Largest Num " + arr[arr.size()-2] );
+else
+System.out.println(" No Second Largest Num " );
+
+}
