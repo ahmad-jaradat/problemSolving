@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.tree;
 
 /*
  * You are given two binary trees root1 and root2.

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.slidingwindows;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,7 +29,6 @@ elements (i.e from index 1 to 4) is 10, So the sequence
 generated is 10 10 10 15 15 90 90
  */
 public class SlidingWindowMaximum {
-
 	// 3, 2, 1, 1, 3, 4, 5, 2, 3, 6
 	// Deque : 3, 2, 1
 	private static List<Integer> findMaxInK_Window(int[] arr, int k) {
