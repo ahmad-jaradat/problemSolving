@@ -1,6 +1,4 @@
-package leetcode;
-
-import leetcode.Merge2SortedLinkedList.ListNode;
+package leetcode.linkedlist;
 
 /*
 Given the head of a singly linked list, return true if it is a palindrome.
@@ -43,12 +41,5 @@ public class PalindromeLinkedList {
 
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isPalindrome(new ListNode(1).n(2).n(3).n(2).n(1)));
-        System.out.println(isPalindrome(new ListNode(1).n(2).n(2).n(1)));
-        System.out.println(isPalindrome(new ListNode(1)));
-        System.out.println(isPalindrome(new ListNode(1).n(2)));
     }
 }

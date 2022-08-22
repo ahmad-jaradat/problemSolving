@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkedlist;
 
 /*
  * Linked List Cycle
@@ -65,32 +65,4 @@ public class LinkedListCycle {
 		System.out.println(hasCycle(new ListNode(1).n(node).n(3).n(4).n(node)));
 		System.out.println(hasCycle(new ListNode(1)));
 	}
-
-	private static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-
-		ListNode n(int val) {
-			ListNode ptr = this;
-			while (ptr.next != null)
-				ptr = ptr.next;
-			ptr.next = new ListNode(val);
-			return this;
-		}
-
-		ListNode n(ListNode val) {
-			ListNode ptr = this;
-			while (ptr.next != null)
-				ptr = ptr.next;
-			ptr.next = val;
-			return this;
-		}
-
-	}
-
 }
