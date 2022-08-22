@@ -24,41 +24,29 @@ Constraints:
 public class AddBinary {
 
 	private static String addBinary(String a, String b) {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		char[] aA = a.toCharArray();
 		char[] bA = b.toCharArray();
-		short carry = 0;
-		int i = 0;
-		short r = 0;
-		while (i < aA.length || i < bA.length) {
-			if (i < aA.length && i < bA.length) {
-				r = (short) (aA[i] - '0' + bA[i] - '0' + carry);
-			} else if (i < aA.length) {
-				r = (short) (aA[i] - '0' + carry);
-			} else {
-				r = (short) (bA[i] - '0' + carry);
-			}
+		int carry = 0;
+		int aI = aA.length - 1;
+		int bI = bA.length - 1;
 
-			if (r == 0)
-				result = '0' + result;
-			else if (r == 1)
-				result = '1' + result;
-			else if (r == 2) {
-				result = '0' + result;
-				carry = 1;
-			} else {
-				result = '1' + result;
-				carry = 1;
-			}
-			i++;
+		while (aI >= 0 || bI >= 0) {
+			int sum = carry;
+			if (aI >= 0)
+				sum += (aA[aI--] - '0');
+			if (bI >= 0)
+				sum += (bA[bI--] - '0');
+			result.append((sum % 2));
+			carry =  (sum / 2);
 		}
 		if (carry == 1)
-			result = '1' + result;
-		return result;
+			result.append(carry);
+		return result.reverse().toString();
 	}
 
 	public static void main(String[] args) {
-		System.out.println(addBinary("11", "1"));
-		System.out.println(addBinary("1010", "1011"));
+		System.out.println(addBinary("11", "1")); // 100
+		System.out.println(addBinary("1010", "1011")); // 10101
 	}
 }
