@@ -28,21 +28,43 @@ Follow up: Could you do it in O(n) time and O(1) space?
 public class PalindromeLinkedList {
 
     private static boolean isPalindrome(ListNode head) {
-        ListNode ptr = head;
-        int count = 1;
-        while (ptr.next != null) {
-            ptr = ptr.next;
+        ListNode tail = head;
+        int count = 0;
+        // Count nodes and get tail node
+        while (tail.next != null) {
+            tail = tail.next;
             count++;
         }
-        ListNode tail = ptr;
 
-        ListNode next = head.next;
-        for (int i = 0; i < count / 2; i++) {
-
+        // Move to middle node
+        ListNode midPtr = head;
+        for (int i = 0; i < (count / 2); i++) {
+            midPtr = midPtr.next;
         }
 
+        reversLinkedList(midPtr.next);
+        midPtr.next = null;
+        // compare tail and head linked list
+        while (tail != null && head != null)
+            if (tail.val != head.val)
+                return false;
+            else {
+                tail = tail.next;
+                head = head.next;
+            }
+        return true;
+    }
 
-        return false;
+    private static void reversLinkedList(ListNode ptr) {
+        // revers linkedList before middle node
+        ListNode pre = null;
+        ListNode cur = ptr;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
     }
 
     public static void main(String[] args) {
@@ -50,5 +72,6 @@ public class PalindromeLinkedList {
         System.out.println(isPalindrome(new ListNode(1).n(2).n(2).n(1)));
         System.out.println(isPalindrome(new ListNode(1)));
         System.out.println(isPalindrome(new ListNode(1).n(2)));
+        System.out.println(isPalindrome(new ListNode(1).n(2).n(3).n(1)));
     }
 }
