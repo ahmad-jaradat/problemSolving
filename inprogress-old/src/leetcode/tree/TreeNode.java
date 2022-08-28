@@ -2,8 +2,8 @@ package leetcode.tree;
 
 public class TreeNode {
 	int val;
-	TreeNode left;
-	TreeNode right;
+	public TreeNode left;
+	public TreeNode right;
 
 	TreeNode() {
 	}
@@ -22,5 +22,5 @@ public class TreeNode {
 	public String toString() {
 		return "TreeNode [val=" + val + ", left=" + left + ", right=" + right + "]";
 	}
-	
+
 }
