@@ -35,12 +35,35 @@ Constraints:
  */
 public class BackspaceStringCompare {
     private static boolean backspaceCompare(String s, String t) {
-        int sI = s.length() - 1;
-        int tI = t.length() - 1;
-        while (sI >= 0 && tI >= 0) {
+        char[] sA = removeWhite(s.toCharArray());
+        char[] tA = removeWhite(t.toCharArray());
+        int iS = sA.length - 1;
+        int iT = tA.length - 1;
 
+        while (iS >= 0 && iT >= 0) {
+            if (sA[iS--] != tA[iT--])
+                return false;
         }
-        return (sI == 0 && tI == 0);
+        while (iS >= 0)
+            if (sA[iS--] != '#')
+                return false;
+        while (iT >= 0)
+            if (tA[iT--] != '#')
+                return false;
+        return true;
+    }
+
+    private static char[] removeWhite(char[] input) {
+        int i = input.length - 1;
+        int x = input.length - 1;
+        while (x >= 0) {
+            if (input[i] != '#')
+                input[i--] = input[x];
+            x--;
+        }
+        while (i >= 0)
+            input[i--] = '#';
+        return input;
     }
 
     public static void main(String[] args) {
