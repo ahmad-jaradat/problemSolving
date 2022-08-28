@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkedlist;
 
 /*
 You are given the heads of two sorted linked lists list1 and list2.
@@ -85,38 +85,5 @@ public class Merge2SortedLinkedList {
         System.out.println(mergeRec(new ListNode(1).n(2).n(4), new ListNode(1).n(3).n(4)));
         System.out.println(mergeRec(null, new ListNode(0)));
         System.out.println(mergeRec(new ListNode(0), null));
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        ListNode n(int val) {
-            ListNode ptr = this;
-            while (ptr.next != null)
-                ptr = ptr.next;
-            ptr.next = new ListNode(val);
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + (next != null ? next : "null") +
-                    '}';
-        }
     }
 }

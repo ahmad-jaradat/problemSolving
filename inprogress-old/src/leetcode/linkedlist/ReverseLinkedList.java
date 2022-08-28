@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkedlist;
 
 /*
 Given the head of a singly linked list, reverse the list, and return the reversed list.
@@ -63,34 +63,5 @@ public class ReverseLinkedList {
         System.out.println(reverse(new ListNode(1)));
         System.out.println(reverseRecursion(new ListNode(1).next(2).next(3).next(4).next(5)));
         System.out.println(reverseRecursion(new ListNode(1)));
-    }
-
-    static public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        public ListNode next(int val) {
-            ListNode node = new ListNode(val);
-            ListNode lastNode = this;
-            while (lastNode.next != null)
-                lastNode = lastNode.next;
-            lastNode.next = node;
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + (next != null ? next.toString() : "null") +
-                    '}';
-        }
     }
 }

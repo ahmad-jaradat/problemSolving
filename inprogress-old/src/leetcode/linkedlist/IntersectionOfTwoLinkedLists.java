@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkedlist;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -91,38 +91,5 @@ public class IntersectionOfTwoLinkedLists {
         System.out.println(getIntersectionNode(
                 new ListNode(4).n(1).n(8).n(4).n(5),
                 new ListNode(5).n(6).n(1).n(8).n(4).n(5)));
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-
-        ListNode n(int val) {
-            ListNode ptr = this;
-            while (ptr.next != null)
-                ptr = ptr.next;
-            ptr.next = new ListNode(val);
-            return this;
-        }
-
-        ListNode n(ListNode node) {
-            ListNode ptr = this;
-            while (ptr.next != null)
-                ptr = ptr.next;
-            ptr.next = node;
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    '}';
-        }
     }
 }
