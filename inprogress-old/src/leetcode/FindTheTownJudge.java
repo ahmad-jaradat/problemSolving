@@ -44,10 +44,20 @@ Constraints:
 public class FindTheTownJudge {
 
 	private static int findJudge(int n, int[][] trust) {
-		return -1;
+		int[] t = new int[n + 1];
+		int tI = 1;
+		for (int i = 0; i < trust.length; i++) {
+			t[trust[i][1]]++;
+			t[trust[i][0]]--;
+			if (t[tI] < t[trust[i][1]])
+				tI = trust[i][1];
+		}
+		return (t[tI] == n - 1) ? tI : -1;
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println(findJudge(2, new int[][] { { 1, 2 } }));// 2
+		System.out.println(findJudge(3, new int[][] { { 1, 3 }, { 2, 3 } }));// 3
+		System.out.println(findJudge(3, new int[][] { { 1, 3 }, { 2, 3 }, { 3, 1 } }));// -1
 	}
 }
